@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	m "github.com/damascus-mx/kepler/models"
+	m "../user/models"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"

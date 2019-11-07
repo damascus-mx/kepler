@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	m "Kepler/user/models"
+	m "github.com/damascus-mx/kepler/models"
 )
 
 // CreateUser creates a user
