@@ -1,4 +1,4 @@
-module github.com/maestre3d/kepler
+module github.com/damascus-mx/kepler
 
 go 1.13
 

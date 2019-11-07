@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	m "github.com/damascus-mx/kepler/models"
+	_userModels "github.com/damascus-mx/kepler/user/models"
 )
 
 // CreateUser creates a user
@@ -15,7 +15,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 
 // GetUser Gets a user
 func GetUser(w http.ResponseWriter, r *http.Request) {
-	user := m.User{}
+	user := _userModels.User{}
 	user.Username = "elRuelasLGBT"
 
 	userJSON, err := json.Marshal(user)
