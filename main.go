@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"net/http"
 
-	m "../user/models"
-
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"
+
+	"github.com/user/damascus-mx/kepler/models"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func customMiddleware(next http.Handler) http.Handler {
 }
 
 func userHandler(w http.ResponseWriter, r *http.Request) {
-	user := m.User{}
+	user := User{}
 	user.Username = "elRuelasLGBT"
 
 	userJSON, err := json.Marshal(user)

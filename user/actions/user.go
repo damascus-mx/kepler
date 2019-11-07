@@ -1,4 +1,4 @@
-package actions
+package user
 
 import (
 	"encoding/json"

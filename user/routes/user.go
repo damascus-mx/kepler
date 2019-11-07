@@ -1,4 +1,4 @@
-package kepler
+package routes
 
 // UserRoutes user routing
 var UserRoutes = [2]string{
