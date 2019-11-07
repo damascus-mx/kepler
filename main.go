@@ -9,7 +9,7 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"
 
-	"github.com/user/damascus-mx/kepler/models"
+	"github.com/damascus-mx/kepler/user/models"
 )
 
 func main() {
