@@ -7,8 +7,8 @@ import (
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/cors"
 
-	"github.com/damascus-mx/kepler/core"
-	user "github.com/damascus-mx/kepler/user/routes"
+	"github.com/damascus-mx/kepler/src/core"
+	"github.com/damascus-mx/kepler/src/routes"
 )
 
 // InitApplication Returns a new chi Router pointer
@@ -35,7 +35,7 @@ func InitApplication() *chi.Mux {
 	app.Use(middleware.RealIP)
 
 	// Set routes
-	var user core.IRoute = user.Routes{}
+	var user core.IRoute = routes.UserRoutes{}
 	user.SetRoutes(app)
 
 	return app

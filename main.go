@@ -8,7 +8,7 @@ import (
 
 	"github.com/joho/godotenv"
 
-	_app "github.com/damascus-mx/kepler/bin"
+	_app "github.com/damascus-mx/kepler/src/bin"
 )
 
 func main() {
@@ -24,7 +24,7 @@ func main() {
 	}
 
 	s3Bucket := os.Getenv("S3_BUCKET")
-	fmt.Printf(s3Bucket)
+	fmt.Println(s3Bucket)
 
 	http.ListenAndServe(": 3000", _app.InitApplication())
 }

@@ -1,24 +1,24 @@
-package user
+package usecases
 
 import (
 	"encoding/json"
 	"fmt"
 	"net/http"
 
-	"github.com/damascus-mx/kepler/user/models"
+	"github.com/damascus-mx/kepler/src/models"
 )
 
-// Actions Exports all user actions
-type Actions struct {
+// UserActions Exports all user actions
+type UserActions struct {
 }
 
 // CreateUser creates a user
-func (a Actions) CreateUser(w http.ResponseWriter, r *http.Request) {
+func (a UserActions) CreateUser(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Hello from user!")
 }
 
 // GetUser Gets a user
-func (a Actions) GetUser(w http.ResponseWriter, r *http.Request) {
+func (a UserActions) GetUser(w http.ResponseWriter, r *http.Request) {
 	user := models.User{}
 	user.Username = "elRuelasLGBT"
 
