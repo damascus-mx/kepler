@@ -2,6 +2,7 @@ package app
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
@@ -33,6 +34,13 @@ func InitApplication() *chi.Mux {
 	// Set default middlewares
 	app.Use(middleware.RequestID)
 	app.Use(middleware.RealIP)
+	app.Use(middleware.Logger)
+	app.Use(middleware.Recoverer)
+
+	// Set a timeout value on the request context (ctx), that will signal
+	// through ctx.Done() that the request has timed out and further
+	// processing should be stopped.
+	app.Use(middleware.Timeout(60 * time.Second))
 
 	// Set routes
 	var user core.IRoute = routes.UserRoutes{}

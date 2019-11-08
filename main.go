@@ -23,7 +23,7 @@ func main() {
 		panic(err)
 	}
 
-	s3Bucket := os.Getenv("S3_BUCKET")
+	s3Bucket := os.Getenv("AWS_S3_ACCESS_KEY")
 	fmt.Println(s3Bucket)
 
 	http.ListenAndServe(": 3000", _app.InitApplication())
