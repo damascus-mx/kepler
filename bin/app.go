@@ -1,16 +1,14 @@
 package app
 
 import (
-	"context"
 	"fmt"
-	"net/http"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/cors"
 
 	"github.com/damascus-mx/kepler/core"
-	_userRoutes "github.com/damascus-mx/kepler/user/routes"
+	user "github.com/damascus-mx/kepler/user/routes"
 )
 
 // InitApplication Returns a new chi Router pointer
@@ -37,15 +35,8 @@ func InitApplication() *chi.Mux {
 	app.Use(middleware.RealIP)
 
 	// Set routes
-	var user core.IRoute = _userRoutes.Routes{}
+	var user core.IRoute = user.Routes{}
 	user.SetRoutes(app)
 
 	return app
-}
-
-func customMiddleware(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		ctx := context.WithValue(r.Context(), "user", "123")
-		next.ServeHTTP(w, r.WithContext(ctx))
-	})
 }
